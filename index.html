@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>代办事项 - TodoList</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">📝 代办事项</h1>
+            <p class="subtitle">让生活更有条理</p>
+        </header>
+
+        <main class="main">
+            <form class="add-task-form" id="addTaskForm">
+                <div class="input-group">
+                    <input
+                        type="text"
+                        id="taskInput"
+                        class="task-input"
+                        placeholder="添加新的代办事项..."
+                        maxlength="100"
+                        required
+                    >
+                    <button type="submit" class="add-btn">添加</button>
+                </div>
+            </form>
+
+            <div class="tasks-container">
+                <div class="tasks-stats">
+                    <span class="stats-item">
+                        总计: <span id="totalTasks">0</span>
+                    </span>
+                    <span class="stats-item">
+                        已完成: <span id="completedTasks">0</span>
+                    </span>
+                    <span class="stats-item">
+                        待完成: <span id="pendingTasks">0</span>
+                    </span>
+                </div>
+
+                <div class="filter-tabs">
+                    <button class="filter-btn active" data-filter="all">全部</button>
+                    <button class="filter-btn" data-filter="pending">待完成</button>
+                    <button class="filter-btn" data-filter="completed">已完成</button>
+                </div>
+
+                <ul class="tasks-list" id="tasksList">
+                    <!-- 任务项将动态添加到这里 -->
+                </ul>
+
+                <div class="empty-state" id="emptyState">
+                    <div class="empty-icon">✨</div>
+                    <h3>暂无代办事项</h3>
+                    <p>添加您的第一个任务开始吧！</p>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <button class="clear-btn" id="clearCompleted">清除已完成</button>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
